@@ -155,3 +155,4 @@
 2. 가중치를 부여한 k-NN 방법
     
     ![2024-04-17_03-18-49.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/5fe225af-d507-45e3-b328-04ac2f20da2b/2024-04-17_03-18-49.jpg)
+   
