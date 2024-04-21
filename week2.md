@@ -1,10 +1,10 @@
 ## 1. 공공데이터의 뜻과 관리 지침
 
 ### (1) 공공데이터법
- 
+
 - 공공데이터의 제공 및 이용 활성화에 관한 법률 | 제2조 제2호
     
-    > 데이터베이스, 전자화된 파일 등 공공기관이 법령 등에서 정하는 목적을 위하여 생성 또는 취득하여 관리하고 있는 광(光) 또는 전자적 방식으로 처리된 자료 또는 정보
+    > 데이터베이스, 전자화된 파일 등 공공기관이 법령 등에서 정하는 목적을 위하여 생성 또는 취득하여 관리하고 있는 광 또는 전자적 방식으로 처리된 자료, 정보
     > 
 
 - 개별 공공기관이 일상적 업무수행의 결과물로 생성 · 수집 · 취득한 텍스트, 수치, 이미지, 동영상, 오디오 등 다양한 형태의 모든 자료 또는 정보가 대상
@@ -15,25 +15,26 @@
 
 - World Wide Web의 창시자인 Tim Berners-Lee가 주창 (1~5스타)
 - 기계판독 정도 : 스타 1 / 2 / 3~5
+- 각 단계는 데이터의 이용 가능성과 유용성을 향상시키기 위한 기준을 제공
 
-1. 미충족 포맷 
+1. `미충족 포맷`
     1. 스타 1
         - 특정 SW에서 읽기만 가능, 자유로운 수정 · 변환 불가
         - ex. PDF, 표 캡쳐
     - 미충족 포맷은 공공데이터포털에 등록이 불가능
     
-2. 최소충족 포맷 
+2. `최소충족 포맷`
     1. 스타 2
         - 특정 SW에서 읽기 · 수정 · 변환 가능
         - ex. HWP, XLS, JPG, PNG, MP3, WMV, …
         
-3. 오픈 포맷 (스타 3,4,5)
+3. `오픈 포맷` (스타 3,4,5)
     1. 스타 3 
         - 적어도 하나의 비독점적 SW에서 읽기 · 수정 · 변환 가능
         - ex. CSV, JSON, XML
     2. 스타 4 
         - URI에 기초하여 데이터의 **속성 및 관계에 대해 기술**
-        - ex. RDF (Resource Description Framework)
+        - ex. RDF (Resource Description Framework) 웹 표준으로 공개
     3. 스타 5 
         - 웹상의 다른 데이터와 **연결되어 제공**되는 데이터
         - ex. LOD (Linked Open Data) - 확장자 X, 데이터가 서로의 연결 관계로 이루어진 웹
@@ -42,29 +43,29 @@
 
 ### (3) 공공데이터 진행 과정
 
-1. 생성 · 수집
+1. `생성·수집`
     - 기관이 생성하는 데이터를 기계 판독이 가능한 꼴(Machine Readable)로 정비
     - 데이터 개방을 위해 공공데이터의 제공대상을 정의
 
-1. 처리 (검토)
+1. `처리` (검토)
     - 제공하고자 하는 데이터가 법적으로 공공데이터에 해당하는지 검토
     - 제공제외대상이 포함되어 있는지(ex. 개인정보), 저작권 확보 여부 등을 확인
     
-2. 등록
+2. `등록`
     - 공공데이터목록등록관리시스템에 제공대상 목록 및 데이터를 등록
 
-1. 제공
+1. `제공`
     - 기관의 데이터를 국민과 기업 등을 대상으로 개방 및 제공
 
-1. 사후 관리
+1. `사후 관리`
     - 제공 단계 이후 공공데이터 변경사항 및 갱신주기 등을 반영
     - 데이터 이용에 있어서의 불편사항 접수 및 분쟁 조정 처리
     
 
 ### (4) 공공데이터 제공 신청
 
-- 공공데이터 목록에 없는 데이터일지라도 개인이 제공 신청할 수 있음
-- 공공기관장은 저작권 등의 요소를 검토한 후 10일 이내에 제공 여부를 결정해야 함
+- 공공데이터 목록에 없는 데이터일지라도 `개인이 제공 신청할 수 있음`
+- 공공기관장은 저작권 등의 요소를 검토한 후 `10일` 이내에 제공 여부를 결정해야 함
     
     (공공데이터법 제27조 제3항)
     
@@ -95,14 +96,14 @@
 
 ### (2) 웹 크롤링과 OpenAPI
 
-- 웹 크롤링
+- `웹 크롤링`
     - 웹상의 데이터를 가공해서 수집해오는 것
     - ~~BeautifulSoup을 이용한 정적 크롤링, Selenium을 이용한 동적 크롤링~~
-    - OpenAPI를 이용한 데이터 접근 및 수정 - 역시 웹 크롤링의 종류로 볼 수 있음
+    - `OpenAPI를 이용한 데이터 접근 및 수정` - 역시 웹 크롤링의 종류로 볼 수 있음
 
 - OpenAPI
     - 파일 형태가 아닌 OpenAPI 방식으로 공개된 데이터도 공공데이터포털에 존재
-    - API 활용을 위한 인증 키 신청 후, Python을 이용하여 데이터 수집 가능
+    - API 활용을 위한 `인증 키 신청` 후, Python을 이용하여 데이터 수집 가능
     
     ![2024-04-16_00-36-36.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/20066460-0daa-422a-81a7-ed255c20c7b4/2024-04-16_00-36-36.jpg)
     
@@ -112,10 +113,10 @@
     
     - 제공 기관마다 절차가 다를 수 있음
     - 활용 신청 - 발급 요청 후 1시간 내외의 시간이 소요될 수 있음
-    - 참고문서
+    - `참고문서`
         - 데이터를 활용 가능한 가이드라인을 제공함
         - 데이터 표준 - XML, JSON 등 제공 확장자 표시됨
-        - 요청-응답 메시지 & 에러코드 제공
+        - `요청-응답 메시지` & `에러코드` 제공
             - 요청 메시지 명세서 제공 - query, path의 종류 표시
             - 예시 API
                 
@@ -130,11 +131,10 @@
 
 1. XML 형식 데이터의 수집 & 처리
     
-    (1) 인증키를 활용한 서버통신 진행
+    (1) `요청 URL과 인증키를 활용`한 서버통신 진행
     
     ```python
     import requests
-    from bs4 import BeautifulSoup
     
     url1 = 'http://apis.data.go.kr/B553530/BEEC/BEEC_01_LIST?serviceKey='
     key = '인증키 넣는 칸'
@@ -144,21 +144,26 @@
     
     result = requests.get(url)
     result = result.content
+    result
     ```
     
-    (2) BeautifulSoup을 이용한 XML 데이터 처리
+    ![2024-04-21_17-49-33.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/18647aa7-4ce8-4e75-8231-78ad817d2801/2024-04-21_17-49-33.jpg)
+    
+    (2) `BeautifulSoup을 이용`한 XML 데이터 처리
     
     ```python
+    from bs4 import BeautifulSoup
+    
     soup = BeautifulSoup(result, 'lxml-xml')
     ```
     
-    - 'lxml-xml' : xml의 Parser
+    - `'lxml-xml'` : xml의 Parser
     - 받은 request의 결과값을 가공해줌
         
-        ![2024-04-16_00-53-45.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/63b65191-e72b-43e1-bc10-8b63ce0dcb77/2024-04-16_00-53-45.jpg)
+        ![2024-04-21_17-51-43.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/af2f7b1b-f8fa-4b90-bb50-66aa1cccbae3/2024-04-21_17-51-43.jpg)
         
     
-    (3) XML 형식 데이터의 pandas DataFrame 변환
+    (3) XML 형식 데이터의 `pandas` DataFrame 변환
     
     ```python
     import pandas as pd
@@ -168,17 +173,16 @@
     
     - `xpath = './/item'` : item 별로 데이터프레임 만들도록 설정
         
-        ![2024-04-16_00-56-04.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/54c99308-cc0d-46f8-b15e-835fcca97ac6/2024-04-16_00-56-04.jpg)
+        ![2024-04-21_17-54-11.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/b98d8abe-3320-4fa6-9ae0-f14bb54bded7/2024-04-21_17-54-11.jpg)
         
     
 
 ---
 
-1. JSON 형식 데이터의 수집 & 처리
+1. `JSON 형식 데이터`의 수집 & 처리
 
 ```python
 import requests
-from bs4 import BeautifulSoup
 
 url1 = 'http://apis.data.go.kr/B553530/BEEC/BEEC_01_LIST?serviceKey='
 key = '인증키 넣는 칸'
@@ -194,4 +198,12 @@ result = result.json()
 
 - JSON : BeautifulSoup으로 가공하지 않아도 해석 가능한 자료로 받아올 수 있음
     
-    ![2024-04-16_00-59-17.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/410225bb-7028-4735-818b-75e446b530e7/2024-04-16_00-59-17.jpg)
+    ![2024-04-21_18-02-02.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/06ab0611-fcf0-4773-ba1e-76ddf8193225/2024-04-21_18-02-02.jpg)
+    
+
+```python
+df = pd.json_normalize(result['response']['body']['items']['item'])
+df
+```
+
+![2024-04-21_18-06-44.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/5fc728eb-12f9-468e-bfa6-5e76e52d30ec/2024-04-21_18-06-44.jpg)
