@@ -22,7 +22,7 @@
     from sklearn.metrics import confusion_matrix
     ```
     
-2. 데이터 불러오기
+2. 데이터 불러오기 (위치와 분류값 보유)
     
     ```python
     df = pd.read_csv('treasure.csv')
@@ -71,8 +71,41 @@
     
     ![2024-04-29_15-30-18.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/054e9f98-5797-4544-a463-d0fb40a4d85c/2024-04-29_15-30-18.jpg)
     
-    → 정확도 = 1, error rate = 0 (+ 민감도, 특이도 계산 방법 복기하기)
+    → 정확도 = 1, error rate = 0
     
+    - Confusion Matrix 복습
+        - `정확도` (Accuracy)
+            
+            ![2024-04-08_15-35-33.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/f447fa46-81e4-40d3-b421-851f7fe6d42c/2024-04-08_15-35-33.jpg)
+            
+        
+        - 혼동 행렬 (confusion matrix)
+            
+            ![2024-04-08_15-36-25.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/6336cb4a-f69f-4b6c-a22d-9b8207202d64/2024-04-08_15-36-25.jpg)
+            
+            - `Accuracy` : 350/400 = 87.5%
+            - `Error rate` : 50/400 = 12.5%
+        
+        `Recall`
+        
+        - 실제 positive 데이터 중, 맞게 예측한 비율
+        - (실제 이탈한 사람 중, 이탈이라고 예측한 비율 : 270/290 = 93.1%)
+        
+        `Precision`
+        
+        - 예측 positive 데이터 중, 맞게 예측한 비율
+        - (이탈할 것으로 예측한 사람 중, 실제 이탈한 비율 : 270/300 = 90.0%)
+        
+        `민감도` (Sensitivity)
+        
+        - 실제 positive 데이터 중, 맞게 예측한 비율 (= Recall)
+        - (실제 이탈한 사람 중, 이탈이라고 예측한 비율 : 270/290 = 93.1%)
+        
+        `특이도` (Specificity)
+        
+        - 실제 negative 데이터 중, 맞게 예측한 비율
+        - (실제 유지한 사람 중, 유지라고 예측한 비율 : 80/110 = 72.7%)
+        
 
 - exercise (test, train 자료를 따로 제공하는 경우)
     
@@ -123,7 +156,7 @@
 - 사후확률을 계산하여 분류를 수행하는 방법
     - 의존변수에 해당하는 각 경우의 확률에 대해서 사후확률을 구한 후, 비교
     - 가장 확률이 높은 경우 선정 & 확률 비교해 비율 고려
-- 전제 : 각 독립변수가 확률적으로 상호 독립이라는 가정
+- 전제 : 각 독립변수가 확률적으로 `상호 독립`이라는 가정
 - 데이터 형태에 따른 NB 종류 선정
     1. BernoulliNB : 입력 변수들이 모두 이진 형태인 경우에 활용
         - 출력 변수의 형태는 이진이 아니어도 상관 없이 활용 가능
@@ -134,7 +167,8 @@
     ![2024-04-29_15-45-46.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/9d496b41-5156-4574-b3fb-23afdc5395c7/2024-04-29_15-45-46.jpg)
     
 
-- 사후확률 (Posteriori Probability)
+### (2) 사후확률 (Posteriori Probability)
+
 - 예시 :
     
     ![2024-04-29_15-48-14.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/edfd69d1-6c01-4d0c-9269-1bae8a4e3915/29f8940e-37f7-420b-a2ba-563b1686062a/2024-04-29_15-48-14.jpg)
@@ -155,13 +189,13 @@
         4/10 * 1/4 * 1/4 * 2/4 * 3/4 = 3/320
         
     
-    1. 사후확률 계산
+    1. 사후확률 계산 - 비율로 비교
         - 승패 비율 = 4:3
             
             → 고려대학교가 승리했을 확률 4/7 = 57.1%
             
 
-### (2) NB에서 특수 상황 고려
+### (3) NB에서 특수 상황 고려 - 라플라스 보정
 
 1. 조건부확률 중 0이 존재하는 경우?
     - Laplacian Correction (라플라스 보정) 활용
@@ -175,7 +209,7 @@
     - NB : 비교적 간편한 식으로 빠르게 분류를 수행하는 대신, 실제로 성립하기 어려운 가정을 채택한다는 단점을 지님
     
 
-### (3) 실습 - NB 분류
+### (4) 실습 - NB 분류
 
 1. 라이브러리 호출
     
@@ -201,7 +235,6 @@
     
 4. NB 분류기 생성
     - 알파 : 라플라스 보정값
-    - 
     
     ```python
     NB = BernoulliNB(alpha = 0)
